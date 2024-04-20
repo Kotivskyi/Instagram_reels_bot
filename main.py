@@ -17,10 +17,11 @@ def has_instagram_reel(text):
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
+    message_id = update.message.message_id
 
     if has_instagram_reel(text):
         replaced_text = re.sub(pattern, "www.ddinstagram.com/reel/", text)
-        await update.message.reply_text(replaced_text)
+        await update.message.reply_text(replaced_text, reply_to_message_id=message_id)
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(BOT_TOKEN).build()
