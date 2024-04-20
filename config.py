@@ -1,5 +1,5 @@
 # Telegram bot token
-BOT_TOKEN = ""
-API_KEY=""
-IDS_ALLOWED=[]
+import os
+
+BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
 
